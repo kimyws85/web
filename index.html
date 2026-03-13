@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <style>
+        body, h2, h3, p{
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        img{
+            width: 100%; height: 100%; object-fit: cover;
+            display: block;
+        }
+        header{
+            height: 100vh;
+            position: relative;
+        }
+        header nav{
+            position: absolute;
+            left: 20px; top: 10px;
+            background-color: #fff;
+            width: 50%; height: 50px;
+            display: flex; align-items: center;
+            justify-content: space-between;
+            padding: 0 20px; box-sizing: border-box;
+        }
+        header nav .menu{
+            display: flex;
+            height: 100%;
+        }
+        header nav .menu > li{
+            position: relative;
+        }
+        header nav .menu > li > a{            
+            width: 100px; display: inline-block;
+            height: 100%; align-content: center; text-align: center;
+            font-weight: 600;
+        }
+        header nav .menu > li:hover > a{
+            color: blue;
+        }
+        header nav .menu > li > .sub-menu{
+            display: none;
+            position: absolute; left: 0; top: 100%;
+            background-color: #fff;
+            width: 100%;
+        }
+        header nav .menu > li:hover > .sub-menu{
+            display: block;
+        }
+        header nav .menu > li > .sub-menu a{
+            display: inline-block;
+            width: 100%; height: 40px; 
+            text-align: center; align-content: center;
+        }
+        header .text-box{
+            position: absolute;
+            left: 20px; top: 50%;
+            transform: translateY(-50%);
+            font-size: 36px; color: #fff;
+            background-color: #0003; 
+            white-space: nowrap;
+        }
+        header .container{
+            position: absolute; bottom: 50px; left: 50%;
+            transform: translateX(-50%);
+            padding: 10px; box-sizing: border-box;
+            display: flex; background-color: #fff;
+            gap: 20px; width: 70%;
+            flex-wrap: wrap; 
+        }
+        header .container .item{
+            width: calc((100% - 60px)/4); height: 50px; 
+            background-color: black; color: #fff; 
+            display: flex; align-items: center; justify-content: center;
+            gap: 20px;
+        }
+        header .container .item img{
+            width: 30px; height: 30px; border-radius: 50%;
+        }
+        .s1{
+            padding: 30px 20px; box-sizing: border-box;
+        }
+        .s1 h2{
+            margin-bottom: 20px;
+        }
+        .s1 .container{
+            display: flex; flex-wrap: wrap;
+            gap: 10px;
+        }
+        .s1 .container .item{
+            width: calc((100% - 30px)/4);
+        }
+        .s1 .container .item .img-box{
+            height: 300px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            position: relative;
+        }
+        .s1 .container .item .img-box .box{
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background-color: #0008;
+            text-align: center; align-content: center;
+            opacity: 0;
+        }
+        .s1 .container .item .img-box:hover .box{
+            opacity: 1; transition: 1s;
+        }
+        .s1 .container .item .img-box .box span{
+            padding: 5px 12px; color: #fff;
+            border: 1px solid #fff;
+        }
+        .s2{
+            padding: 30px 20px;
+        }
+        .s2 h2{
+            margin-bottom: 10px;
+        }
+        .s2 .container{
+            display: flex;
+            gap: 20px; flex-wrap: wrap;
+        }
+        .s2 .container .items{
+            width: calc((100% - 40px)/4);
+        }
+        .s2 .container .itemb{
+            width: calc((100% - 40px)/2);
+        }
+        .s2 .container .item{
+            border-radius: 10px; overflow: hidden;
+            position: relative;
+        }
+        .s2 .container .item .box{
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; height: 60px;
+            background-color: #fff4;
+            text-align: center; align-content: center;
+        }
+        .s2 .container img{
+            height: 300px;
+        }
+        @media(max-width:1200px){
+            header nav{
+                display: block; width: fit-content;
+                height: auto; padding: 0;
+            }
+            header nav .menu{
+                display: block;
+            }
+            header nav .menu > li > a{
+                height: 40px;
+            }
+            header nav .menu > li > .sub-menu{
+                left: 100%; top: 0; width: fit-content;
+            }
+            header nav .menu > li:hover > .sub-menu{
+                display: flex; 
+            }
+            header nav .menu > li > .sub-menu a{
+                width: 120px;
+            }
+            header .text-box{
+                right: 20px; left: auto;
+                text-align: end;
+            }
+            header .container{
+                width: 50%;
+            }
+            header .container .item{
+                width: calc((100% - 20px)/2);
+            }
+            .s1 .container .item{
+                width: calc((100% - 10px)/2);
+            }
+            .s2 .container .items{
+                width: calc((100% - 20px)/2);
+            }
+            .s2 .container .itemb{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <img src="img2.jpg" alt="">
+            <nav>
+                <div class="logo">
+                    <i class="fa-solid fa-clapperboard"></i>
+                    <span>College</span>
+                </div>    
+                <ul class="menu">
+                    <li>
+                        <a href="#">Menu1</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Menu1</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Menu1</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Menu1</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Menu1</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">sub-menu1</a></li>
+                            <li><a href="#">sub-menu2</a></li>
+                            <li><a href="#">sub-menu3</a></li>
+                            <li><a href="#">sub-menu4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="text-box">
+                Contrary to popular belief
+                <br>
+                Hampden-Sydney College in Virginia
+            </div>
+            <div class="container">
+                <div class="item">
+                    <img src="img.jpg" alt="">
+                    <p>classical Latin</p>
+                </div>
+                <div class="item">
+                    <img src="img.jpg" alt="">
+                    <p>classical Latin</p>
+                </div>
+                <div class="item">
+                    <img src="img.jpg" alt="">
+                    <p>classical Latin</p>
+                </div>
+                <div class="item">
+                    <img src="img.jpg" alt="">
+                    <p>classical Latin</p>
+                </div>
+            </div>
+        </header>
+        <section class="s1">
+            <h2>five centuries</h2>
+            <div class="container">
+                <div class="item">
+                    <div class="img-box">
+                        <img src="img1.jpg" alt="">
+                        <div class="box">
+                            <span>제품 더보기</span>
+                        </div>
+                    </div>
+                    <h3>dummy text</h3>
+                </div>
+                <div class="item">
+                    <div class="img-box">
+                        <img src="img1.jpg" alt="">
+                        <div class="box">
+                            <span>제품 더보기</span>
+                        </div>
+                    </div>
+                    <h3>dummy text</h3>
+                </div>
+                <div class="item">
+                    <div class="img-box">
+                        <img src="img1.jpg" alt="">
+                        <div class="box">
+                            <span>제품 더보기</span>
+                        </div>
+                    </div>
+                    <h3>dummy text</h3>
+                </div>
+                <div class="item">
+                    <div class="img-box">
+                        <img src="img1.jpg" alt="">
+                        <div class="box">
+                            <span>제품 더보기</span>
+                        </div>
+                    </div>
+                    <h3>dummy text</h3>
+                </div>
+            </div>
+        </section>
+        <section class="s2">
+            <h2>classical Latin</h2>
+            <div class="container">
+                <div class="item items">
+                    <img src="img3.jpg" alt="">
+                    <div class="box">첨단소재</div>
+                </div>
+                <div class="item items">
+                    <img src="img3.jpg" alt="">
+                    <div class="box">첨단소재</div>
+                </div>
+                <div class="item itemb">
+                    <img src="img3.jpg" alt="">
+                    <div class="box">첨단소재</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
